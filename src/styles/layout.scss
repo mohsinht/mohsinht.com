@@ -1,0 +1,210 @@
+.site-content {
+  padding: 15px;
+  padding-left: 310px;
+  padding-bottom: 0px;
+  color: white;
+  position: relative;
+  top: 50px;
+  overflow: auto;
+  height: calc(100vh - 86px);
+  transition: 0.55s ease-in-out;
+  background: #20202a;
+  -webkit-box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
+  box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
+  .site-curtain {
+    background: rgba(30, 30, 40, 0.88);
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: 0.55s ease-in-out;
+    transition: 0.55s ease-in-out;
+  }
+  .content-scrollable {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+footer.footer {
+  color: #8c8c8e;
+  width: 100%;
+  padding: 18px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: linear-gradient(
+    159deg,
+    rgba(37, 37, 50, 0.98) 0%,
+    rgba(35, 35, 45, 0.98) 100%
+  );
+  -webkit-box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
+  box-shadow: 0 1px 4px 0 rgb(15 15 20 / 10%);
+  font-size: 12px;
+  color: #cacace;
+  -webkit-transition: 0.55s ease-in-out;
+  transition: 0.55s ease-in-out;
+  z-index: 9;
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1rem;
+  .copyrights {
+    margin-left: 1rem;
+  }
+  .mail-link {
+    margin-right: 1rem;
+    a {
+      color: #5a5d69;
+      text-decoration: none;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  div {
+    color: #5a5d69;
+    transition: all 0.2s;
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+.menu-container {
+  padding: 0 0 0 50px;
+  position: fixed;
+  left: 8px;
+  right: 8px;
+  top: 8px;
+  height: 56px;
+  z-index: 100;
+  transition: all 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+  -moz-transition: all 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+  -webkit-transition: all 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+  -o-transition: all 0.7s cubic-bezier(0.165, 0.85, 0.45, 1);
+  background: linear-gradient(
+    159deg,
+    rgba(37, 37, 50, 0.98) 0%,
+    rgba(35, 35, 45, 0.98) 100%
+  );
+  box-shadow: #00000014 1px 5px 6px 0px;
+  @media only screen and (max-width: 992px) {
+    padding: 0 0 0 0;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 14px;
+    height: 80px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    width: 75px;
+  }
+  @media only screen and (max-width: 500px) {
+    width: 50px;
+  }
+  .logo,
+  .download-btn {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 800;
+    color: #fff;
+    align-items: center;
+    @media only screen and (max-width: 992px) {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 10px;
+      width: 73px;
+      float: none;
+      display: block;
+    }
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    float: right;
+    padding: 0px 20px;
+    @media only screen and (max-width: 992px) {
+      flex-direction: column;
+      height: 100vh;
+      padding: 10px 0px;
+    }
+    li {
+      padding: 10px 20px;
+      display: inline-block;
+      vertical-align: top;
+      position: relative;
+      cursor: pointer;
+      font-size: 10px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 44px;
+      color: #b0b3b8;
+      transition: all 0.2s;
+      @media only screen and (max-width: 500px) {
+        font-size: 6px;
+      }
+      .menu-icon {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 4px;
+        @media only screen and (max-width: 500px) {
+          font-size: 30px;
+        }
+      }
+      &.active {
+        background: #9147ff !important;
+        box-shadow: #00000014 1px 5px 6px 0px;
+        color: white;
+        transform: scale(1) !important;
+        cursor: inherit;
+        @media only screen and (max-width: 992px) {
+          border-radius: 0px 12px 12px 0px;
+          -moz-border-radius: 0px 12px 12px 0px;
+          -webkit-border-radius: 0px 12px 12px 0px;
+          -khtml-border-radius: 0px 12px 12px 0px;
+          width: 44px;
+        }
+        @media only screen and (max-width: 500px) {
+          width: 22px;
+          padding: 10px 20px !important;
+        }
+      }
+      &:hover {
+        color: white;
+        text-shadow: #00000024 1px 5px 6px 0px;
+        transform: scale(1.1);
+        z-index: 10;
+        @media only screen and (max-width: 500px) {
+          padding: 10px 7px;
+        }
+      }
+    }
+  }
+}
