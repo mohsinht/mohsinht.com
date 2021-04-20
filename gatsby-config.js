@@ -3,6 +3,7 @@ module.exports = {
     title: "Mohsin Hayat",
   },
   plugins: [
+    "gatsby-plugin-ts",
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
