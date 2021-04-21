@@ -13,7 +13,7 @@ export default function SiteLayout(props: any) {
     setExpand(!isExpanded);
   };
   React.useEffect(() => {
-      if(width < 992) {
+      if(width < 992 && width !== 0) {
           setExpand(true);
       }
   }, [height, width]);

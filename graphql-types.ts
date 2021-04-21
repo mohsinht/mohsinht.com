@@ -275,6 +275,7 @@ export type SiteBuildTimeArgs = {
 export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
+  siteUrl?: Maybe<Scalars['String']>;
 };
 
 export type SitePage = Node & {
@@ -283,15 +284,82 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String'];
   componentChunkName: Scalars['String'];
   matchPath?: Maybe<Scalars['String']>;
-  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
-  pluginCreator?: Maybe<SitePlugin>;
-  pluginCreatorId?: Maybe<Scalars['String']>;
-  componentPath?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
+  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
+  pluginCreator?: Maybe<SitePlugin>;
+  pluginCreatorId?: Maybe<Scalars['String']>;
+  componentPath?: Maybe<Scalars['String']>;
 };
+
+export type MarkdownHeading = {
+  id?: Maybe<Scalars['String']>;
+  value?: Maybe<Scalars['String']>;
+  depth?: Maybe<Scalars['Int']>;
+};
+
+export type MarkdownHeadingLevels =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6';
+
+export type MarkdownExcerptFormats =
+  | 'PLAIN'
+  | 'HTML'
+  | 'MARKDOWN';
+
+export type MarkdownWordCount = {
+  paragraphs?: Maybe<Scalars['Int']>;
+  sentences?: Maybe<Scalars['Int']>;
+  words?: Maybe<Scalars['Int']>;
+};
+
+export type MarkdownRemark = Node & {
+  id: Scalars['ID'];
+  html?: Maybe<Scalars['String']>;
+  htmlAst?: Maybe<Scalars['JSON']>;
+  excerpt?: Maybe<Scalars['String']>;
+  excerptAst?: Maybe<Scalars['JSON']>;
+  headings?: Maybe<Array<Maybe<MarkdownHeading>>>;
+  timeToRead?: Maybe<Scalars['Int']>;
+  tableOfContents?: Maybe<Scalars['String']>;
+  wordCount?: Maybe<MarkdownWordCount>;
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+
+export type MarkdownRemarkExcerptArgs = {
+  pruneLength?: Maybe<Scalars['Int']>;
+  truncate?: Maybe<Scalars['Boolean']>;
+  format?: Maybe<MarkdownExcerptFormats>;
+};
+
+
+export type MarkdownRemarkExcerptAstArgs = {
+  pruneLength?: Maybe<Scalars['Int']>;
+  truncate?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type MarkdownRemarkHeadingsArgs = {
+  depth?: Maybe<MarkdownHeadingLevels>;
+};
+
+
+export type MarkdownRemarkTableOfContentsArgs = {
+  absolute?: Maybe<Scalars['Boolean']>;
+  pathToSlugField?: Maybe<Scalars['String']>;
+  maxDepth?: Maybe<Scalars['Int']>;
+  heading?: Maybe<Scalars['String']>;
+};
+
 
 export type ImageFormat =
   | 'NO_CHANGE'
@@ -485,7 +553,6 @@ export type ImageSharpFluid = {
   presentationHeight: Scalars['Int'];
 };
 
-
 export type ImagePlaceholder =
   | 'DOMINANT_COLOR'
   | 'TRACED_SVG'
@@ -569,12 +636,26 @@ export type SitePlugin = Node & {
   version?: Maybe<Scalars['String']>;
   pluginOptions?: Maybe<SitePluginPluginOptions>;
   nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
   pluginFilepath?: Maybe<Scalars['String']>;
   packageJson?: Maybe<SitePluginPackageJson>;
 };
 
 export type SitePluginPluginOptions = {
+  output?: Maybe<Scalars['String']>;
+  createLinkInHead?: Maybe<Scalars['Boolean']>;
+  icon?: Maybe<Scalars['String']>;
+  legacy?: Maybe<Scalars['Boolean']>;
+  theme_color_in_head?: Maybe<Scalars['Boolean']>;
+  cache_busting_mode?: Maybe<Scalars['String']>;
+  crossOrigin?: Maybe<Scalars['String']>;
+  include_favicon?: Maybe<Scalars['Boolean']>;
+  cacheDigest?: Maybe<Scalars['String']>;
+  base64Width?: Maybe<Scalars['Int']>;
+  stripMetadata?: Maybe<Scalars['Boolean']>;
+  defaultQuality?: Maybe<Scalars['Int']>;
+  failOnError?: Maybe<Scalars['Boolean']>;
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
@@ -620,6 +701,8 @@ export type Query = {
   allSite: SiteConnection;
   sitePage?: Maybe<SitePage>;
   allSitePage: SitePageConnection;
+  markdownRemark?: Maybe<MarkdownRemark>;
+  allMarkdownRemark: MarkdownRemarkConnection;
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
@@ -758,20 +841,44 @@ export type QuerySitePageArgs = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
-  pluginCreator?: Maybe<SitePluginFilterInput>;
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
-  componentPath?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  pluginCreator?: Maybe<SitePluginFilterInput>;
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
+  componentPath?: Maybe<StringQueryOperatorInput>;
 };
 
 
 export type QueryAllSitePageArgs = {
   filter?: Maybe<SitePageFilterInput>;
   sort?: Maybe<SitePageSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryMarkdownRemarkArgs = {
+  id?: Maybe<StringQueryOperatorInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  htmlAst?: Maybe<JsonQueryOperatorInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+  excerptAst?: Maybe<JsonQueryOperatorInput>;
+  headings?: Maybe<MarkdownHeadingFilterListInput>;
+  timeToRead?: Maybe<IntQueryOperatorInput>;
+  tableOfContents?: Maybe<StringQueryOperatorInput>;
+  wordCount?: Maybe<MarkdownWordCountFilterInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllMarkdownRemarkArgs = {
+  filter?: Maybe<MarkdownRemarkFilterInput>;
+  sort?: Maybe<MarkdownRemarkSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
 };
@@ -825,6 +932,7 @@ export type QuerySitePluginArgs = {
   version?: Maybe<StringQueryOperatorInput>;
   pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
   nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
   ssrAPIs?: Maybe<StringQueryOperatorInput>;
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
@@ -1543,6 +1651,7 @@ export type DirectorySortInput = {
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
+  siteUrl?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteConnection = {
@@ -1576,6 +1685,7 @@ export type SiteFieldsEnum =
   | 'buildTime'
   | 'siteMetadata___title'
   | 'siteMetadata___description'
+  | 'siteMetadata___siteUrl'
   | 'port'
   | 'host'
   | 'polyfill'
@@ -1704,12 +1814,26 @@ export type SitePluginFilterInput = {
   version?: Maybe<StringQueryOperatorInput>;
   pluginOptions?: Maybe<SitePluginPluginOptionsFilterInput>;
   nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
   ssrAPIs?: Maybe<StringQueryOperatorInput>;
   pluginFilepath?: Maybe<StringQueryOperatorInput>;
   packageJson?: Maybe<SitePluginPackageJsonFilterInput>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  output?: Maybe<StringQueryOperatorInput>;
+  createLinkInHead?: Maybe<BooleanQueryOperatorInput>;
+  icon?: Maybe<StringQueryOperatorInput>;
+  legacy?: Maybe<BooleanQueryOperatorInput>;
+  theme_color_in_head?: Maybe<BooleanQueryOperatorInput>;
+  cache_busting_mode?: Maybe<StringQueryOperatorInput>;
+  crossOrigin?: Maybe<StringQueryOperatorInput>;
+  include_favicon?: Maybe<BooleanQueryOperatorInput>;
+  cacheDigest?: Maybe<StringQueryOperatorInput>;
+  base64Width?: Maybe<IntQueryOperatorInput>;
+  stripMetadata?: Maybe<BooleanQueryOperatorInput>;
+  defaultQuality?: Maybe<IntQueryOperatorInput>;
+  failOnError?: Maybe<BooleanQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
@@ -1791,6 +1915,92 @@ export type SitePageFieldsEnum =
   | 'internalComponentName'
   | 'componentChunkName'
   | 'matchPath'
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
@@ -1833,6 +2043,19 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___output'
+  | 'pluginCreator___pluginOptions___createLinkInHead'
+  | 'pluginCreator___pluginOptions___icon'
+  | 'pluginCreator___pluginOptions___legacy'
+  | 'pluginCreator___pluginOptions___theme_color_in_head'
+  | 'pluginCreator___pluginOptions___cache_busting_mode'
+  | 'pluginCreator___pluginOptions___crossOrigin'
+  | 'pluginCreator___pluginOptions___include_favicon'
+  | 'pluginCreator___pluginOptions___cacheDigest'
+  | 'pluginCreator___pluginOptions___base64Width'
+  | 'pluginCreator___pluginOptions___stripMetadata'
+  | 'pluginCreator___pluginOptions___defaultQuality'
+  | 'pluginCreator___pluginOptions___failOnError'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___pathCheck'
@@ -1840,6 +2063,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
   | 'pluginCreator___nodeAPIs'
+  | 'pluginCreator___browserAPIs'
   | 'pluginCreator___ssrAPIs'
   | 'pluginCreator___pluginFilepath'
   | 'pluginCreator___packageJson___name'
@@ -1859,8 +2083,96 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___packageJson___peerDependencies___version'
   | 'pluginCreator___packageJson___keywords'
   | 'pluginCreatorId'
-  | 'componentPath'
+  | 'componentPath';
+
+export type SitePageGroupConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<SitePageEdge>;
+  nodes: Array<SitePage>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type SitePageFilterInput = {
+  path?: Maybe<StringQueryOperatorInput>;
+  component?: Maybe<StringQueryOperatorInput>;
+  internalComponentName?: Maybe<StringQueryOperatorInput>;
+  componentChunkName?: Maybe<StringQueryOperatorInput>;
+  matchPath?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
+  pluginCreator?: Maybe<SitePluginFilterInput>;
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
+  componentPath?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageSortInput = {
+  fields?: Maybe<Array<Maybe<SitePageFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type MarkdownHeadingFilterListInput = {
+  elemMatch?: Maybe<MarkdownHeadingFilterInput>;
+};
+
+export type MarkdownHeadingFilterInput = {
+  id?: Maybe<StringQueryOperatorInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+  depth?: Maybe<IntQueryOperatorInput>;
+};
+
+export type MarkdownWordCountFilterInput = {
+  paragraphs?: Maybe<IntQueryOperatorInput>;
+  sentences?: Maybe<IntQueryOperatorInput>;
+  words?: Maybe<IntQueryOperatorInput>;
+};
+
+export type MarkdownRemarkConnection = {
+  totalCount: Scalars['Int'];
+  edges: Array<MarkdownRemarkEdge>;
+  nodes: Array<MarkdownRemark>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<MarkdownRemarkGroupConnection>;
+};
+
+
+export type MarkdownRemarkConnectionDistinctArgs = {
+  field: MarkdownRemarkFieldsEnum;
+};
+
+
+export type MarkdownRemarkConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: MarkdownRemarkFieldsEnum;
+};
+
+export type MarkdownRemarkEdge = {
+  next?: Maybe<MarkdownRemark>;
+  node: MarkdownRemark;
+  previous?: Maybe<MarkdownRemark>;
+};
+
+export type MarkdownRemarkFieldsEnum =
   | 'id'
+  | 'html'
+  | 'htmlAst'
+  | 'excerpt'
+  | 'excerptAst'
+  | 'headings'
+  | 'headings___id'
+  | 'headings___value'
+  | 'headings___depth'
+  | 'timeToRead'
+  | 'tableOfContents'
+  | 'wordCount___paragraphs'
+  | 'wordCount___sentences'
+  | 'wordCount___words'
   | 'parent___id'
   | 'parent___parent___id'
   | 'parent___parent___parent___id'
@@ -1947,33 +2259,32 @@ export type SitePageFieldsEnum =
   | 'internal___owner'
   | 'internal___type';
 
-export type SitePageGroupConnection = {
+export type MarkdownRemarkGroupConnection = {
   totalCount: Scalars['Int'];
-  edges: Array<SitePageEdge>;
-  nodes: Array<SitePage>;
+  edges: Array<MarkdownRemarkEdge>;
+  nodes: Array<MarkdownRemark>;
   pageInfo: PageInfo;
   field: Scalars['String'];
   fieldValue?: Maybe<Scalars['String']>;
 };
 
-export type SitePageFilterInput = {
-  path?: Maybe<StringQueryOperatorInput>;
-  component?: Maybe<StringQueryOperatorInput>;
-  internalComponentName?: Maybe<StringQueryOperatorInput>;
-  componentChunkName?: Maybe<StringQueryOperatorInput>;
-  matchPath?: Maybe<StringQueryOperatorInput>;
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
-  pluginCreator?: Maybe<SitePluginFilterInput>;
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>;
-  componentPath?: Maybe<StringQueryOperatorInput>;
+export type MarkdownRemarkFilterInput = {
   id?: Maybe<StringQueryOperatorInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  htmlAst?: Maybe<JsonQueryOperatorInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+  excerptAst?: Maybe<JsonQueryOperatorInput>;
+  headings?: Maybe<MarkdownHeadingFilterListInput>;
+  timeToRead?: Maybe<IntQueryOperatorInput>;
+  tableOfContents?: Maybe<StringQueryOperatorInput>;
+  wordCount?: Maybe<MarkdownWordCountFilterInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
 };
 
-export type SitePageSortInput = {
-  fields?: Maybe<Array<Maybe<SitePageFieldsEnum>>>;
+export type MarkdownRemarkSortInput = {
+  fields?: Maybe<Array<Maybe<MarkdownRemarkFieldsEnum>>>;
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
@@ -2393,6 +2704,19 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___output'
+  | 'pluginOptions___createLinkInHead'
+  | 'pluginOptions___icon'
+  | 'pluginOptions___legacy'
+  | 'pluginOptions___theme_color_in_head'
+  | 'pluginOptions___cache_busting_mode'
+  | 'pluginOptions___crossOrigin'
+  | 'pluginOptions___include_favicon'
+  | 'pluginOptions___cacheDigest'
+  | 'pluginOptions___base64Width'
+  | 'pluginOptions___stripMetadata'
+  | 'pluginOptions___defaultQuality'
+  | 'pluginOptions___failOnError'
   | 'pluginOptions___name'
   | 'pluginOptions___path'
   | 'pluginOptions___pathCheck'
@@ -2400,6 +2724,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
   | 'nodeAPIs'
+  | 'browserAPIs'
   | 'ssrAPIs'
   | 'pluginFilepath'
   | 'packageJson___name'
