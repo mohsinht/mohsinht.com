@@ -3,7 +3,8 @@ import '../../styles/layout.scss';
 
 const Header = () => {
   return (
-    <header className='menu-container'>
+    <header className={`menu-container`}>
+      <div className='logo'>Mohsin</div>
       <ul>
         <li>
           <div className='menu-icon'>

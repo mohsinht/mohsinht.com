@@ -1,14 +1,22 @@
 import React from 'react';
-import '../../styles/profile.scss'
+import '../../styles/profile.scss';
 
-const ProfilePanel = () => {
+const ProfilePanel = (props: any) => {
+  const onClickExpand = () => {
+    props.expandSiteContent();
+  };
   return (
     <>
-      <div className='profile-side'>
+      <div className={`profile-side ${props.isExpanded ? 'hidden' : ''}`}>
         <div className='intro'>
           <img src='https://mohsinht.com/Mohsin_DP.jpg' />
           <div className='name'>Mohsin Hayat</div>
           <div className='headline'>Fullstack Developer & Designer</div>
+          <div className='hide-btn' onClick={() => onClickExpand()}>
+            <i
+              className={`fas fa-chevron-circle-${props.isExpanded ? 'right' : 'left'}`}
+            ></i>
+          </div>
         </div>
         <div className='details'></div>
         <div className='social'>

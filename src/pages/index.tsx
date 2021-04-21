@@ -1,18 +1,265 @@
 import React from 'react';
 import '../styles/global.scss';
-import SiteContainer from '../components/Layout/SiteContainter';
-import ProfilePanel from '../components/ProfilePanel';
-import SiteContent from '../components/Layout/SiteContent';
-import Header from '../components/Header';
+import SiteLayout from '../components/Layout/SiteLayout';
 
 export default function Home() {
   return (
     <>
-      <Header />
-      <SiteContainer>
-        <ProfilePanel />
-        <SiteContent />
-      </SiteContainer>
+      <SiteLayout>
+        {' '}
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus. v
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+        Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam quaerat
+        tenetur pariatur doloribus. Web Development Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Delectus esse commodi deserunt vitae, vero
+        quasi! Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+        ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+        commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+        doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+        Veniam quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+        dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+        deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur doloribus.
+      </SiteLayout>
     </>
   );
 }
