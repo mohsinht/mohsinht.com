@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../styles/layout.scss';
 import { Helmet } from 'react-helmet';
+import LayoutProvider from '../Context/Layout/LayoutProvider';
 
 const SiteContainer = (props: any) => {
   return (
@@ -12,7 +13,9 @@ const SiteContainer = (props: any) => {
           crossOrigin='anonymous'
         ></script>
       </Helmet>
-      <main className='site-container'>{props.children}</main>
+      <LayoutProvider>
+        <main className='site-container'>{props.children}</main>
+      </LayoutProvider>
     </>
   );
 };

@@ -111,6 +111,7 @@ footer.footer {
     rgba(35, 35, 45, 0.98) 100%
   );
   box-shadow: #00000014 1px 5px 6px 0px;
+  border-inline-end-color: #2f2f3e;
   @media only screen and (max-width: 992px) {
     padding: 0 0 0 0;
     position: fixed;
@@ -159,7 +160,8 @@ footer.footer {
       height: 100vh;
       padding: 10px 0px;
     }
-    li {
+    a {
+      text-decoration: none;
       padding: 10px 20px;
       display: inline-block;
       vertical-align: top;

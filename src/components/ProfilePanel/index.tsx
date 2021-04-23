@@ -1,20 +1,22 @@
 import React from 'react';
 import '../../styles/profile.scss';
+import { useLayout } from '../Context/Layout/LayoutContext';
 
 const ProfilePanel = (props: any) => {
+  const { isProfileExpanded, expandProfile } = useLayout();
   const onClickExpand = () => {
-    props.expandSiteContent();
+    expandProfile();
   };
   return (
     <>
-      <div className={`profile-side ${props.isExpanded ? 'hidden' : ''}`}>
+      <div className={`profile-side ${isProfileExpanded ? '' : 'hidden'}`}>
         <div className='intro'>
           <img src='https://mohsinht.com/Mohsin_DP.jpg' />
           <div className='name'>Mohsin Hayat</div>
           <div className='headline'>Fullstack Developer & Designer</div>
           <div className='hide-btn' onClick={() => onClickExpand()}>
             <i
-              className={`fas fa-chevron-circle-${props.isExpanded ? 'right' : 'left'}`}
+              className={`fas fa-chevron-circle-${isProfileExpanded ? 'left' : 'right'}`}
             ></i>
           </div>
         </div>

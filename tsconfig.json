@@ -5,7 +5,8 @@
     "lib": ["dom"],             /* <-- required! */
     "jsx": "preserve",          /* <-- required! */
     "moduleResolution": "node", /* <-- required! */
-
+    "declaration": true,
+    
     /* for mixed ts/js codebase */
     "allowJs": true,
     "outDir": "./build",    /* this won't be used by ts-loader */
