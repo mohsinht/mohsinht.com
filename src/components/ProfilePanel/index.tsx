@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../styles/profile.scss';
 import { useLayout } from '../Context/Layout/LayoutContext';
+import ContactBlock from './ContactBlock';
+import LocationBlock from './LocationBlock';
 
 const ProfilePanel = (props: any) => {
   const { isProfileExpanded, expandProfile } = useLayout();
@@ -16,11 +18,41 @@ const ProfilePanel = (props: any) => {
           <div className='headline'>Fullstack Developer & Designer</div>
           <div className='hide-btn' onClick={() => onClickExpand()}>
             <i
-              className={`fas fa-chevron-circle-${isProfileExpanded ? 'left' : 'right'}`}
+              className={`fas fa-chevron-circle-${
+                isProfileExpanded ? 'left' : 'right'
+              }`}
             ></i>
           </div>
         </div>
-        <div className='details'></div>
+        <div className='details'>
+          <LocationBlock />
+          <div className='details-content'>
+            Web Development Lorem ipsum dolor sit amet, consectetur adipisicing
+            elit. Delectus esse commodi deserunt vitae, vero quasi! Veniam
+            quaerat tenetur pariatur doloribus. Web Development Lorem ipsum
+            dolor sit amet, consectetur adipisicing elit. Delectus esse commodi
+            deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+            doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+            Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+            commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+            doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+            Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+            commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+            doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Delectus esse commodi deserunt vitae, vero quasi!
+            Veniam quaerat tenetur pariatur doloribus. Web Development Lorem
+            ipsum dolor sit amet, consectetur adipisicing elit. Delectus esse
+            commodi deserunt vitae, vero quasi! Veniam quaerat tenetur pariatur
+            doloribus. Web Development Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Delectus
+          </div>
+
+          <ContactBlock />
+        </div>
         <div className='social'>
           <a href='https://github.com/mohsinht'>
             <i className='fab fa-github'></i>
